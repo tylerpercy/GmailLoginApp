@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,71 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="GmailLoginApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fLW-WS-caX">
+                                <rect key="frame" x="93" y="514" width="189" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="WvM-6X-Pfx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Sign Out"/>
+                                <connections>
+                                    <action selector="didTapSignOut:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gOI-39-Puq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MoP-dI-eQb">
+                                <rect key="frame" x="93" y="588" width="189" height="30"/>
+                                <state key="normal" title="Disconnect"/>
+                                <connections>
+                                    <action selector="didTapDisconnect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="e14-Pb-AZJ"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="El1-9U-4Bb" customClass="GIDSignInButton">
+                                <rect key="frame" x="93" y="453" width="189" height="63"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kBb-yW-N3C">
+                                <rect key="frame" x="93" y="107" width="189" height="88"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="88" id="Dh2-as-GxN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="El1-9U-4Bb" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="453" id="0g1-xg-wca"/>
+                            <constraint firstItem="fLW-WS-caX" firstAttribute="leading" secondItem="MoP-dI-eQb" secondAttribute="leading" id="2dj-mt-jpx"/>
+                            <constraint firstItem="kBb-yW-N3C" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="I8e-4D-i88"/>
+                            <constraint firstItem="kBb-yW-N3C" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="93" id="IE5-HF-hKg"/>
+                            <constraint firstItem="kBb-yW-N3C" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="87" id="Pys-cv-qeT"/>
+                            <constraint firstItem="kBb-yW-N3C" firstAttribute="leading" secondItem="El1-9U-4Bb" secondAttribute="leading" id="Sc2-tl-dfz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="MoP-dI-eQb" secondAttribute="bottom" constant="49" id="VhE-jI-dbr"/>
+                            <constraint firstItem="kBb-yW-N3C" firstAttribute="trailing" secondItem="El1-9U-4Bb" secondAttribute="trailing" id="iE3-a5-bsC"/>
+                            <constraint firstItem="El1-9U-4Bb" firstAttribute="trailing" secondItem="fLW-WS-caX" secondAttribute="trailing" id="pm8-8s-96i"/>
+                            <constraint firstItem="El1-9U-4Bb" firstAttribute="leading" secondItem="fLW-WS-caX" secondAttribute="leading" id="q4f-F7-rdO"/>
+                            <constraint firstItem="MoP-dI-eQb" firstAttribute="top" secondItem="El1-9U-4Bb" secondAttribute="bottom" constant="72" id="rcn-UV-HBQ"/>
+                            <constraint firstItem="fLW-WS-caX" firstAttribute="trailing" secondItem="MoP-dI-eQb" secondAttribute="trailing" id="wrs-pQ-rJD"/>
+                            <constraint firstItem="MoP-dI-eQb" firstAttribute="top" secondItem="fLW-WS-caX" secondAttribute="bottom" constant="18" id="xZB-9e-1CR"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="disconnectButton" destination="MoP-dI-eQb" id="YL3-iQ-7g3"/>
+                        <outlet property="signInButton" destination="El1-9U-4Bb" id="3RE-qK-5rV"/>
+                        <outlet property="signOutButton" destination="fLW-WS-caX" id="yfv-Wg-NE9"/>
+                        <outlet property="statusText" destination="kBb-yW-N3C" id="jRe-VI-1Pe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="118.29085457271366"/>
         </scene>
     </scenes>
 </document>
